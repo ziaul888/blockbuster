@@ -1,10 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './component/header'
 import {newsCategory} from './news'
 
 import React, { Component } from 'react'
 import NewsList from './component/newsList';
+import Pagination from './component/pagination';
+import Result from './component/result';
 
 const fakeNews =[
   {
@@ -35,8 +37,11 @@ export default class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 offset-md-3">
+            
               <Header  category={newsCategory.technology}/>
-              <NewsList news={fakeNews}/>     
+              <Result/>
+              <NewsList news={fakeNews}/> 
+              <Pagination/>    
           </div>
 
         </div>

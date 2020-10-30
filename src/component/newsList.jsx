@@ -14,7 +14,7 @@ const NewsItem =({item})=>(
            alt={item.title}/>
        )}
        <div className="card-body">
-           <a href={item.url} target="blank" rel="noopener noreferrer" style={{color:"#424242"}}>
+           <a href={item.url} target="_blank" rel="noopener noreferrer" style={{color:"#424242"}}>
        <h5 className="card-title">{item.title}</h5>
            </a>
            <a href={item.url} target="blank" rel="noopener noreferrer" style={{color:"#424242"}}>
