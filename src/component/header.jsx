@@ -13,7 +13,7 @@ export default class Header extends Component {
      }
      
     render() {
-   const {category}=this.props
+   const {category, changeCategory}=this.props
         return (
             <div className="my-4">
                <h1 className="mb-4" > Block Buster Headline</h1> 
@@ -29,13 +29,13 @@ export default class Header extends Component {
                  && Object.keys(newsCategory).map(item=>{
                      if(category === newsCategory[item]){
                        return(
-                           <button className="btn btn-sm btn-warning mr-2 mb-2">
+                           <button className="btn btn-sm btn-warning mr-2 mb-2" onClick={()=>changeCategory(newsCategory[item])}>
                                {`#${newsCategory[item]}`}
                            </button>
                        )
                      }
                      return(
-                        <button className="btn btn-sm btn-light mr-2 mb-2">
+                        <button className="btn btn-sm btn-light mr-2 mb-2" onClick={()=>changeCategory(newsCategory[item])}>
                         {`#${newsCategory[item]}`}
                     </button>
                      )
