@@ -7,7 +7,8 @@ import React, { Component } from 'react'
 import NewsList from './component/newsList';
 import Pagination from './component/pagination';
 import Result from './component/result';
-import axios from 'axios';
+//import axios from 'axios';
+import News from './news';
 
 
 export default class App extends Component {
@@ -25,17 +26,37 @@ export default class App extends Component {
   }
 
 componentDidMount(){
-  const url= `${process.env.REACT_APP_NEWS_URL}?apiKey=${process.env.REACT_APP_NEWS_API_KEY}&category=technology&pageSize=10`;
-  axios.get(url)
-  .then( (response)=>{
-    this.setState({
-     news:response.data.articles,
-   })
- })
-  .catch((e)=>{
- console.log(e);
- })
-console.log(url);
+  //const url= `${process.env.REACT_APP_NEWS_URL}?apiKey=${process.env.REACT_APP_NEWS_API_KEY}&category=technology&pageSize=10`;
+  //axios.get(url)
+ // //.then( (response)=>{
+  //  this.setState({
+ // //   news:response.data.articles,
+  // })
+ //})
+ // .catch((e)=>{//
+ //console.log(e);//
+ //})
+//console.log(url);
+const news =new News(newsCategory.technology);
+news.getNews().then(data=>{
+  console.log(data);
+});
+}
+
+componentDidUpdate(prevProps,prevState){
+  //if (prevState.category !== this.state.category){
+  //  const url= `${process.env.REACT_APP_NEWS_URL}?apiKey=${process.env.REACT_APP_NEWS_API_KEY}&category=technology&pageSize=10`;
+ // axios.get(url)
+ // .then( (response)=>{
+ //   this.setState({
+ //    news:response.data.articles,
+ //  })
+ //})
+ // .catch((e)=>{
+ //console.log(e);
+ //})
+//
+//  }
 }
   render() {
     return (

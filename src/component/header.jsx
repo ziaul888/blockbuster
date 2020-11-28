@@ -35,7 +35,7 @@ export default class Header extends Component {
                        )
                      }
                      return(
-                        <button className="btn btn-sm btn-light mr-2 mb-2" onClick={()=>changeCategory(newsCategory[item])}>
+                        <button onClick={()=>changeCategory(newsCategory[item])} className="btn btn-sm btn-light mr-2 mb-2" >
                         {`#${newsCategory[item]}`}
                     </button>
                      )
